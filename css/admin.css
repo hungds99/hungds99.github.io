@@ -1,0 +1,28 @@
+body {
+    font-family: Cambria, sans-serif;
+}
+
+
+.notification {
+    position: relative;
+}
+.notification .notification-content {
+    display: none;
+    position: fixed;
+    text-align: center;
+    background-color: chartreuse;
+    /* width: 240px; */
+    height: 40px;
+    line-height: 40px;
+    z-index: 9999999;
+    transition: all 2s linear;
+    color: white;
+}
+
+.user-manager {
+    display: none;
+}
+
+.order-manager {
+    display: none;
+}

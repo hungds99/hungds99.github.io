@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+.card {
+    border: none;
+}
+
+body {
+    font-family: Cambria, sans-serif;
+}
+
+/*============================ [Header] ============================*/
+header {
+    background-color: #D2D6DF;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+}
+/* header-top */
+.header-top {
+    background-color: #ce5555;
+    color: white;
+}
+.header-top .bar-inner {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-top .bar-inner .acount-item {
+    display: flex;
+    cursor: pointer;
+}
+.header-top .bar-inner .bar-action {
+    display: flex;
+}
+.header-top .bar-inner .bar-action .cart {
+    position: relative;
+    cursor: pointer;
+}
+.header-top .bar-inner .bar-action .cart .cart-quantity {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: crimson;
+    border-radius: 50%;
+    text-align: center;
+    top: -8px;
+    right: -2px;
+}
+.header-top .bar-inner .bar-action .cart-overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(221, 208, 208, 0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+.header-top .bar-inner .bar-action .cart-overlay .cart-content {
+    background-color: white;
+    height: 100%;
+}
+.header-top .bar-inner .bar-action .cart-overlay .cart-content img {
+    width: 90px;
+    height: 50px;
+}
+.header-top .bar-inner .logo img {
+    width: 170px;
+    height: 50px;
+}
+.profileToggle {
+    position: relative;
+    display: none;
+
+}
+.profileToggle p {
+    font-size: 12px;
+}
+.profileToggle .profileAction {
+    position: absolute;
+    left: 50px;
+    z-index: 1;
+    width: 500px;
+}
+
+.wrapper-form button {
+    border-radius: 30px;
+    width: 120px;
+    outline: none;
+    background-image: linear-gradient(to left ,#FFC312,#EE5A24,#FFC312);
+    background-size: 200%;
+    color: #fff;
+    transition: 0.4s linear;
+}
+.wrapper-form button:hover {
+    color: #fff;
+    background-position: right;
+}
+
+/* header-bottom */
+.header-bottom {
+    height: 45px;
+}
+.header-bottom .menu-inner {
+    width: 100%;
+    height: 100%;
+    /* background-color: violet; */
+}
+.header-bottom .menu-inner .menu-bar {
+    width: 80%;
+    height: 100%;
+    /* background-color: turquoise; */
+    margin: auto;
+}
+.header-bottom .menu-bar ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-bottom .menu-bar ul li {
+    height: 100%;
+    width: 16%;
+    text-align: center;
+    line-height: 45px;
+    list-style-type: none;
+}
+.header-bottom .menu-bar ul li:hover {
+    border-bottom: 3px solid brown;
+}
+.header-bottom .menu-bar ul li a:hover {
+    text-decoration: none;
+}
+/*==================================================================*/
+.clearfix {
+    width: 100%;
+    height: 100px;
+}
+/*========================= [Banner Product] =======================*/
+
+
+/*======================= [Section Product] =====================*/
+.tabbed-content {
+    width: 100%;
+    height: 50px;
+    border-bottom: seagreen 1px solid;
+}
+.tabbed-content ul {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.tabbed-content ul li {
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.tabbed-content ul li:hover {
+    background-color: salmon;
+    border-bottom: 1px solid red;
+}
+#extra-product .card:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}
+/*==================================================================*/
+
+/*============================ [Footer] ============================*/
+footer {
+    color: #fff;
+    background-attachment: fixed;
+    background-color:#222;
+    /* background-image: url(https://s7.postimg.org/uyf0oioaz/footer-bg.png); */
+    background-size: cover;
+    background-position: bottom;
+}
+footer p {
+    color: #ccc;				
+}
+footer a {
+    color: #ccc;				
+}
+.social-pet li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.social-pet li a {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+    line-height: 35px;
+    background-color: #3a5a95;
+    color: #fff;
+}
+.social-pet li:nth-child(2) a {
+    background-color: #57aced;
+}
+.social-pet li:nth-child(3) a {
+    background-color: #dd4f43;
+}
+.social-pet li:nth-child(4) a {
+    background-color: #6b27b2;
+}
+.social-pet li a:hover {
+    background-color: #0141a2;
+}
+.social-pet li a:hover i {
+    transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+.recent-post li {
+    display: block;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+.recent-post li label {
+    float: left;
+    border: 2px solid #ccc;
+    padding: 1px 7px;
+    text-align: center;
+}
+.recent-post li label span {
+    color: #fff;
+}
+footer .input-group-addon {
+    background-color: #0141a2;
+    padding: 7px;
+}
+.f-address li {
+    display: inline-block;
+}
+.f-address li i {
+    color: #2995de;
+    font-size: 18px;
+}
+.f-address li a {
+    color: #ccc;
+}
+/*=-Copyright-=*/
+.copyright {
+    background-color: #111;
+    padding: 12px 0;
+    font-size:14px;
+}

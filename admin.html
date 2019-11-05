@@ -1,1 +1,305 @@
-<h1>hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quản Lý</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- FontAwsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="css/admin.css">
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        i:hover {
+            cursor: pointer;
+        }
+
+        .search {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid springgreen;
+        }
+
+        .search:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="">
+        <div class="row">
+            <!-- Vertical navbar -->
+            <div class="vertical-nav bg-white col-2" id="sidebar">
+                <div class="py-4 px-3 mb-4 bg-light text-center">
+                    <img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..."
+                        width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                    <h4 class="m-0">Jason Doe</h4>
+                    <p class="font-weight-light text-muted mb-0">Web developer</p>
+                    <p class="btn btn-primary font-weight-light btn-sm" id="generate">Generate Data</p>
+                </div>
+
+                <p class="text-gray font-weight-bold text-uppercase px-3 small pb-3 mb-0 ml-1">Quản Lý</p>
+
+                <ul class="nav flex-column bg-white mb-0 ml-1">
+                    <li class="nav-item" id="s_product">
+                        <a href="#" class="nav-link text-dark font-italic bg-light">
+                            <i class="fa fa-th-large mr-1 text-primary fa-fw"></i>
+                            Sản Phẩm
+                        </a>
+                    </li>
+                    <li class="nav-item" id="s_user">
+                        <a href="#" class="nav-link text-dark font-italic bg-light">
+                            <i class="fa fa-address-card mr-1 text-primary fa-fw"></i>
+                            Khách Hàng
+                        </a>
+                    </li>
+                    <li class="nav-item" id="s_order">
+                        <a href="#" class="nav-link text-dark font-italic bg-light">
+                            <i class="fa fa-cubes mr-1 text-primary fa-fw"></i>
+                            Đơn Hàng
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End vertical navbar -->
+
+            <div class="col-10">
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">
+                                        <i class="fas fa-home fa-2x"></i>
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Product Manager -->
+                <div class="product-manager" id="product-manager">
+                    <div class="notification offset-9">
+                        <div class="notification-content" id="notifi">
+                            <p id="notifi-content"></p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2 mb-3">
+                        <h4>Quản Lý Sản Phẩm</h4>
+                    </div>
+                    <div class="action mb-4">
+                        <div class="frms container" id="form-id">
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="code">Mã Sản Phẩm: </label>
+                                    <input type="text" class="form-control" id="code" placeholder="Code">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="category">Danh Mục: </label>
+                                    <select class="form-control" id="category">
+                                        <option value="0">Giày Nam</option>
+                                        <option value="1">Giày Nữ</option>
+                                        <option value="2">Phụ Kiện</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="name">Tên Sản Phẩm: </label>
+                                    <input type="text" class="form-control" id="name" placeholder="Name">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="material">Chất Liệu: </label>
+                                    <input type="text" class="form-control" id="material" placeholder="Material">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="price">Giá Tiền: </label>
+                                    <input type="text" class="form-control" id="price" placeholder="Price">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="amount">Số Lượng: </label>
+                                    <input type="number" class="form-control" id="amount" placeholder="Amount">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="entry">Nhập Kho: </label>
+                                    <input type="date" class="form-control" id="entry" placeholder="Entry">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="image">Hình Sản Phẩm: </label>
+                                <input type="file" class="form-control-file btn-outline-info" id="image">
+                            </div>
+                            <div class="text-center" id="actbutton">
+                                <button type="button" class="btn btn-outline-info btn-sm" id="update"
+                                    style="display: none;">Cập Nhật sản phẩm</button>
+                                <button type="button" class="btn btn-outline-success btn-sm" id="add_new">Thêm sản
+                                    phẩm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab container">
+                        <!-- Search form -->
+                        <div class="d-flex offset-8 col-md-4 mb-3">
+                            <input type="text" name="search" id="search" class="search"
+                                placeholder="Nhập Tên Sản Phẩm ...">
+                            <i class="fab fa-searchengin fa-lg"></i>
+                        </div>
+                        <table class="table table-bordered text-center">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Mã Code</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Tên Sản Phẩm</th>
+                                    <th scope="col">Danh Mục</th>
+                                    <th scope="col">Giá Tiền</th>
+                                    <th scope="col">Chất Liệu</th>
+                                    <th scope="col">Số Lượng</th>
+                                    <th scope="col">Nhập Kho</th>
+                                    <th scope="col">Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <!-- Insert Data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p id="genJSON"></p>
+
+                <!-- User Manager -->
+                <div class="user-manager" id="user-manager">
+                    <div class="text-center mt-2 mb-3">
+                        <h4>Quản Lý Khách Hàng</h4>
+                    </div>
+                    <div class="user-tab container">
+                        <table class="table text-center">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Họ Tên</th>
+                                    <th scope="col">Số Điện Thoại</th>
+                                    <th scope="col">Địa Chỉ</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Quyền</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user_tbody">
+                                <!-- Insert Data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Order Manager -->
+                <div class="order-manager" id="order-manager">
+                    <div class="text-center mt-2 mb-3">
+                        <h4>Quản Lý Đơn Hàng</h4>
+                    </div>
+                    <div class="order-tab container">
+                        <table class="table text-center">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">OrderID</th>
+                                    <th scope="col">UserID</th>
+                                    <th scope="col">Ngày Tạo</th>
+                                    <th scope="col">PT Thanh Toán</th>
+                                    <th scope="col">Trạng Thái</th>
+                                    <th scope="col">Chi Tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order_tbody">
+                                <!-- Insert Data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Chi Tiết Sản Phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center" id="product-detail">
+                    <!-- Data -->
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-body" id="detail-content">
+                    <!-- Data -->
+                    <h1 class="text-center">Đơn Hàng</h1>
+                    <div class="row" id="customer-info">
+                        <!-- Insert -->
+                    </div>
+
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="2">SẢN PHẨM</th>
+                                <th scope="col">GIÁ</th>
+                                <th scope="col">SỐ LƯỢNG</th>
+                                <th scope="col">TỔNG</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customer-product">
+                            <!-- Insert Data -->
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <th>Tổng Tiền: </th>
+                                <td id="total-order">100,000 đ</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

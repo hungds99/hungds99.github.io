@@ -1,1 +1,551 @@
-<h1>hello Worrld</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <!-- ================================================================================================== -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- ================================================================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- ================================================================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- ================================================================================================== -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- ================================================================================================== -->
+    <link rel="stylesheet" href="css/home.css">
+    <!-- ================================================================================================== -->
+    <style>
+        body {
+            font-size: 0.9em;
+        }
+
+        .owl-carousel .owl-item img {
+            width: 65%;
+        }
+
+        i {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-wrapper">
+            <div class="header-top">
+                <div class="bar-inner container">
+                    <div id="userProfile"><i class="fas fa-user-tie fa-2x"></i></div>
+                    <div id="adminProfile"><i class="fas fa-user-shield fa-2x"></i></div>
+
+                    <div class="acount-item" data-toggle="modal" data-target="#form_account" id="userAct">
+                        <p>Đăng Nhập/</p>
+                        <p>Đăng Ký</p>
+                    </div>
+
+                    <!-- Account Modal -->
+                    <div class="modal fade" id="form_account" tabindex="-1" role="dialog" aria-labelledby="acountTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body text-info">
+                                    <div class="wrapper-form">
+                                        <div class="login-form-area" id="login-form-area">
+                                            <h5 class="text-center">Đăng Nhập</h5>
+                                            <div class="form-group">
+                                                <label for="email1">Email: </label>
+                                                <input type="email" class="form-control" id="email-login"
+                                                    placeholder="Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password1">Mật Khẩu: </label>
+                                                <input type="password" class="form-control" id="password-login"
+                                                    placeholder="Mật Khẩu">
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-sm" id="signin">Đăng
+                                                    Nhập</button>
+                                            </div>
+
+                                            <div class="mt-2">
+                                                <p style="cursor: pointer;">Quên Mật Khẩu ?</p>
+                                            </div>
+                                            <p id="regiseter-form" style="cursor: pointer;">Đăng Ký Tài Khoản </p>
+                                        </div>
+                                        <div class="regiseter-form-area" style="display: none;"
+                                            id="regiseter-form-area">
+                                            <h5 class="text-center">Đăng Ký</h5>
+                                            <div class="form-group">
+                                                <label for="name">Tên*: </label>
+                                                <input type="text" class="form-control" id="name" placeholder="Tên">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="number">Số Điện Thoại: </label>
+                                                <input type="text" class="form-control" id="number"
+                                                    placeholder="Số Điện Thoại">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address">Địa Chỉ: </label>
+                                                <input type="text" class="form-control" id="address"
+                                                    placeholder="Địa Chỉ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email*: </label>
+                                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Mật Khẩu*: </label>
+                                                <input type="password" class="form-control" id="password"
+                                                    placeholder="Password">
+                                            </div>
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" id="condition">
+                                                <label class="form-check-label" for="check">Chấp nhận các điều khoản khi
+                                                    tạo tài khoản.</label>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-sm" id="register">Đăng
+                                                    Ký</button>
+                                            </div>
+                                            <p id="login-form" style="cursor: pointer;">Bạn Đã Có Tài Khoản</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+
+                    <div class="logo">
+                        <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/logo-mona.png" alt="">
+                    </div>
+                    <div class="bar-action">
+                        <div class="search"></div>
+                        <div class="cart" id="btn-cart">
+                            <i class="fab fa-opencart fa-2x"></i>
+                            <!-- <div class="cart-quantity text-info" id="cart-quantity"></div> -->
+                        </div>
+                        <div class="cart-overlay row" id="cart-overlay">
+                            <div class="row" style="height: 100%;">
+                                <div class="col-8" id="close-cart"></div>
+                                <div class="cart-content col-4">
+                                    <h5 class="text-center mt-3 text-dark">Giỏ Hàng</h5>
+                                    <table class="table table-borderless">
+                                        <tbody id="cart-tbody">
+                                            <!-- Insert Data Here -->
+                                        </tbody>
+                                    </table>
+                                    <div>
+                                        <h5 class="text-dark" id="total"></h5>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-warning float-right btn-sm" id="checkout">Đi
+                                        Đến Giỏ Hàng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profileToggle" id="profileToggle">
+                <div class="profileAction row">
+                    <div class="profile-image col-4 bg-light pt-2">
+                        <div class="text-center">
+                            <img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png"
+                                alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                            <h4 class="m-0">Jason Doe</h4>
+                            <p class="font-weight-light text-muted mb-0">Web developer</p>
+                        </div>
+                    </div>
+                    <div class="col-8 bg-light pt-2">
+                        <div class="profile-content" id="profile-content">
+                            <!-- Insert Data -->
+                        </div>
+                        <div class="profile-action pb-2">
+                            <button type="button" class="btn btn-warning btn-sm" id="admin-manager">
+                                <a href="admin.html">ADMIN</a>
+                            </button>
+                            <button type="button" class="btn btn-success btn-sm">Lưu</button>
+                            <button type="button" class="btn btn-primary btn-sm" id="logout">Đăng Xuất</button>
+                            <button type="button" class="btn btn-danger btn-sm" id="close">Đóng</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="menu-inner container">
+                    <div class="menu-bar">
+                        <ul>
+                            <li>
+                                <a href="">Trang Chủ</a>
+                            </li>
+                            <li>
+                                <a href="">Giới Thiệu</a>
+                            </li>
+                            <li>
+                                <a href="">Sản Phẩm</a>
+                            </li>
+                            <li>
+                                <a href="">Phụ Kiện Khác</a>
+                            </li>
+                            <li>
+                                <a href="">Tin Tức</a>
+                            </li>
+                            <li>
+                                <a href="">Liên Hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End -->
+
+    <!-- ========================================= Body Content ============================================== -->
+    <div class="body-content" id="body-content">
+        <!-- Banner Slider -->
+        <div class="banner-slide">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img style="height: 500px;"
+                            src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/slide-1.jpg"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <img style="height: 500px;"
+                            src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/slide-5.jpg"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <img style="height: 500px;"
+                            src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/slide-2.jpg"
+                            class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block"></div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <!-- End -->
+
+        <div class="clearfix"></div>
+
+        <!-- Banner Product -->
+        <section>
+            <div class="container">
+                <div class="banner-content">
+                    <div class="row text-center">
+                        <div class="col-4 banner-card">
+                            <div class="banner-title">
+                                <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/title_block_03.png"
+                                    alt="">
+                            </div>
+                            <div class="banner-product">
+                                <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/product_block_05.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="col-4 banner-card">
+                            <div class="banner-title">
+                                <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/title_block_05.png"
+                                    alt="">
+                            </div>
+                            <div class="banner-product">
+                                <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/product_block_03.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="col-4 banner-card">
+                            <div class="banner-title">
+                                <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/title_block_07.png"
+                                    alt="">
+                            </div>
+                            <div class="banner-product">
+                                <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/product_block_07.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End -->
+
+        <div class="clearfix"></div>
+
+        <!-- Section Product -->
+        <section>
+            <div class="container">
+                <div class="tabbed-content mb-3">
+                    <ul>
+                        <li>Sản Phẩm Bán Chạy</li>
+                        <li>Sản Phẩm Khuyến Mãi</li>
+                        <li>Sản Phẩm Mới Nhất</li>
+                    </ul>
+                </div>
+                <div class="product-content">
+                    <div class="owl-carousel" id="owl-slide">
+                        <!-- Insert Data -->
+                        <!-- End -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Another Accessories -->
+        <div>
+            <div class="container">
+                <div class="acc-title mb-3">
+                    <h4 class="text-center">______________________________________ Phụ Kiện
+                        ______________________________________</h4>
+                </div>
+                <div class="acc-content">
+                    <div class="row" id="extra-product">
+                        <!-- Insert Data -->
+                        <!-- End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================= Cart Content ============================================== -->
+    <!-- Cart -->
+    <div class="cart-wrapper pb-5 pt-4" style="display: none;" id="body-cart">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h4>Thông Tin Sản Phẩm</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="2">SẢN PHẨM</th>
+                                <th scope="col">GIÁ</th>
+                                <th scope="col">SỐ LƯỢNG</th>
+                                <th scope="col">TỔNG</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-table">
+                            <!-- Insert Data -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <a href="index.html">
+                                        <button type="button" class="btn btn-primary btn-sm">Tiếp tục xem sản
+                                            phẩm</button>
+                                    </a>
+
+                                    <button type="button" class="btn btn-secondary btn-sm">Cập nhật giỏ hàng</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+                <div class="col-4">
+                    <h4>Thông Tin Thanh Toán</h4>
+                    <div class="order-info bg-light p-2 border border-danger mb-2">
+                        <div class="row" id="payment-info" <!-- Insert Data -->
+                        </div>
+                    </div>
+                    <div class="pay-info" id="customer-form">
+                        <h5>Thông tin giao hàng</h5>
+                        <div class="form-group">
+                            <label for="customer-name">Tên: </label>
+                            <input type="text" class="form-control" id="customer-name" placeholder="Tên">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-number">Số Điện Thoại: </label>
+                            <input type="text" class="form-control" id="customer-number" placeholder="Số Điện Thoại">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-address">Địa Chỉ: </label>
+                            <input type="text" class="form-control" id="customer-address" placeholder="Địa Chỉ">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">Email: </label>
+                            <input type="email" class="form-control" id="customer-email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-note">Ghi chú: </label>
+                            <textarea class="form-control" id="customer-note" rows="3"></textarea>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="customer-check">
+                            <label class="form-check-label" for="customer-check">Giao hàng tại nhà.</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm btn-block" id="order">Đặt Hàng</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========================================= Footer Content ============================================== -->
+    <!-- Footer -->
+    <footer class="pt-5 pb-4" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+                    <h5 class="mb-4 font-weight-bold">ABOUT US</h5>
+                    <p class="mb-4">Etiam laoreet in ex quis efficitur.</p>
+                    <ul class="f-address">
+                        <li>
+                            <div class="row">
+                                <div class="col-1"><i class="fas fa-map-marker"></i></div>
+                                <div class="col-10">
+                                    <h6 class="font-weight-bold mb-0">Address:</h6>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-1"><i class="far fa-envelope"></i></div>
+                                <div class="col-10">
+                                    <h6 class="font-weight-bold mb-0">Have any questions?</h6>
+                                    <p><a href="#">Support@userthemes.com</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-1"><i class="fas fa-phone-volume"></i></div>
+                                <div class="col-10">
+                                    <h6 class="font-weight-bold mb-0">Address:</h6>
+                                    <p><a href="#">+XX (0) XX XX-XXXX-XXXX</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+                    <h5 class="mb-4 font-weight-bold">FRESH TWEETS</h5>
+                    <ul class="f-address">
+                        <li>
+                            <div class="row">
+                                <div class="col-1"><i class="fab fa-twitter"></i></div>
+                                <div class="col-10">
+                                    <p class="mb-0"><a href="#">@userthemesrel </a> HTML Version Out Now</p>
+                                    <label>10 Mins Ago</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-1"><i class="fab fa-twitter"></i></div>
+                                <div class="col-10">
+                                    <p class="mb-0"><a href="#">@userthemesrel </a> HTML Version Out Now</p>
+                                    <label>10 Mins Ago</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-1"><i class="fab fa-twitter"></i></div>
+                                <div class="col-10">
+                                    <p class="mb-0"><a href="#">@userthemesrel </a> HTML Version Out Now</p>
+                                    <label>10 Mins Ago</label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+                    <h5 class="mb-4 font-weight-bold">LATEST UPDATES</h5>
+                    <ul class="recent-post">
+                        <li>
+                            <label class="mr-3">28 <br><span>APR</span></label>
+                            <span>Rendomised words which dont look eveable.</span>
+                        </li>
+                        <li>
+                            <label class="mr-3">29 <br><span>APR</span></label>
+                            <span>Rendomised words which dont look eveable.</span>
+                        </li>
+                        <li>
+                            <label class="mr-3">30 <br><span>APR</span></label>
+                            <span>Rendomised words which dont look eveable.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+                    <h5 class="mb-4 font-weight-bold">CONNECT WITH US</h5>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Your Email Address">
+                        <span class="input-group-addon" id="basic-addon2"><i class="fas fa-check"></i></span>
+                    </div>
+                    <ul class="social-pet mt-4">
+                        <li><a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" title="twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" title="google-plus"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#" title="instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright -->
+    <section class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="text-center text-white">
+                        &copy; 2019 Your Company. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 4,
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true
+        });
+    </script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>

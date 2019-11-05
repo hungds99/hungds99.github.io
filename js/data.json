@@ -1,0 +1,176 @@
+{
+    "PRODUCTS": [
+        {
+            "code": "H01",
+            "idcategory": "2",
+            "productName": "Chevron Jogger",
+            "material": "Cotons",
+            "price": "1200000",
+            "amount": "10",
+            "entry": "2019-11-04",
+            "image": "jogger.jpg"
+        },
+        {
+            "code": "H02",
+            "idcategory": "2",
+            "productName": "Pull Over Hoodie",
+            "material": "Contons",
+            "price": "1400000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "T-shirt-2.jpg"
+        },
+        {
+            "code": "H03",
+            "idcategory": "2",
+            "productName": "Suicidal Tendencies",
+            "material": "Cotons",
+            "price": "1250000",
+            "amount": "3",
+            "entry": "2019-11-04",
+            "image": "T-shirt-1.jpg"
+        },
+        {
+            "code": "H04",
+            "idcategory": "2",
+            "productName": "Converse Collegiate",
+            "material": "Contons",
+            "price": "1200000",
+            "amount": "10",
+            "entry": "2019-11-04",
+            "image": "T-shirt.jpg"
+        },
+        {
+            "code": "H05",
+            "idcategory": "2",
+            "productName": "Poly Chuck Plus 1.0",
+            "material": "Contons",
+            "price": "1000000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "balo-4-600x384.jpg"
+        },
+        {
+            "code": "H06",
+            "idcategory": "2",
+            "productName": "Speed 2 Backpack",
+            "material": "Contons",
+            "price": "900000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "balo-3.jpg"
+        },
+        {
+            "code": "H07",
+            "idcategory": "2",
+            "productName": "Lil Duffel",
+            "material": "Contons",
+            "price": "1200000",
+            "amount": "1",
+            "entry": "2019-11-04",
+            "image": "balo-2.jpg"
+        },
+        {
+            "code": "H08",
+            "idcategory": "2",
+            "productName": "Sport Duffel",
+            "material": "Contons",
+            "price": "1800000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "balo-1.jpg"
+        },
+        {
+            "code": "G01",
+            "idcategory": "0",
+            "productName": "Jack Purcell Pro",
+            "material": "Textile",
+            "price": "1200000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "sale-off-8.jpg"
+        },
+        {
+            "code": "G02",
+            "idcategory": "0",
+            "productName": "One Star Pro OG Update",
+            "material": "Textile",
+            "price": "1000000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "sale-off-7.jpg"
+        },
+        {
+            "code": "G03",
+            "idcategory": "0",
+            "productName": "Chuck Taylor All",
+            "material": "Textile",
+            "price": "120000",
+            "amount": "12",
+            "entry": "2019-11-04",
+            "image": "sale-off-6.jpg"
+        },
+        {
+            "code": "G04",
+            "idcategory": "0",
+            "productName": "Cons Auckland Ultra",
+            "material": "Textile",
+            "price": "900000",
+            "amount": "5",
+            "entry": "2019-11-04",
+            "image": "sale-off-2-600x384.jpg"
+        },
+        {
+            "code": "G05",
+            "idcategory": "0",
+            "productName": "Foundational Leather",
+            "material": "Textile",
+            "price": "1800000",
+            "amount": "12",
+            "entry": "2019-11-04",
+            "image": "sale-off-1-600x384.jpg"
+        },
+        {
+            "code": "G06",
+            "idcategory": "1",
+            "productName": "Chuck Taylor Classic",
+            "material": "Textile",
+            "price": "2000000",
+            "amount": "2",
+            "entry": "2019-11-04",
+            "image": "women-classic-5.jpg"
+        },
+        {
+            "code": "G07",
+            "idcategory": "1",
+            "productName": "Taylor Classic",
+            "material": "Textile",
+            "price": "1000000",
+            "amount": "1",
+            "entry": "2019-11-04",
+            "image": "women-classic-3.jpg"
+        },
+        {
+            "code": "G08",
+            "idcategory": "0",
+            "productName": "One Star Sunbaked",
+            "material": "Textile",
+            "price": "2100000",
+            "amount": "6",
+            "entry": "2019-11-04",
+            "image": "women-sunbaked-4-600x384.jpg"
+        },
+        {
+            "code": "G09",
+            "idcategory": "0",
+            "productName": "Archive Prints Hi",
+            "material": "Textile",
+            "price": "920000",
+            "amount": "8",
+            "entry": "2019-11-04",
+            "image": "women-classic-7.jpg"
+        }
+    ],
+    "ACCOUNTS": [],
+    "ORDERS": []
+}
