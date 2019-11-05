@@ -24,7 +24,7 @@ let DATABASE = localStorage.getItem('DATABASE') ? JSON.parse(localStorage.getIte
             username: "Đinh Sỹ Hùng",
             phoneNumber: "01672058923",
             address: "Hải Châu Đà Nẵng",
-            email: "dinhsyhung99@gmail.com",
+            email: "admin@gmail.com",
             password: "123",
             role: "Admin"
         }
