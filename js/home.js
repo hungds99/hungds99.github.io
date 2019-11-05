@@ -450,7 +450,7 @@ function renderCartDetail() {
             <td>${formatter.format(p.price)}</td>
             <td>
                 <i class="fas fa-minus-circle text-secondary" id="minus" data-code="${p.code}"></i>
-                <input type="text" value="${p.quantity}" style="width: 35px; padding-left: 8px;" disabled />
+                <input type="text" value="${p.quantity}" min="1" style="width: 35px; padding-left: 8px;" disabled />
                 <i class="fas fa-plus-circle text-success" id="plus" data-code="${p.code}"></i>
             </td>
             <td>${formatter.format(p.price * p.quantity)}</td>
