@@ -306,6 +306,7 @@ function renderProfileOrder(ID) {
     profileTbody.innerHTML = content;
 }
 
+// ********************** Show Profile *****************************
 let s_profileInfo = document.getElementById('s_profileInfo');
 let s_profileOrder = document.getElementById('s_profileOrder');
 
@@ -520,7 +521,13 @@ function actCartProduct(event) {
 
     if (ev.matches('#minus')) {
         let nValue = parseInt(ev.nextElementSibling.value) - 1;
-        ev.nextElementSibling.value = nValue;
+        if (nValue <= 0) {
+            nValue = 1;
+            ev.nextElementSibling.value = nValue;
+        } else {
+            ev.nextElementSibling.value = nValue;
+        }
+        
         updateCartProduct(data_code, nValue);
     }
 
