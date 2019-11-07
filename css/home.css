@@ -176,8 +176,36 @@ header {
 #extra-product .card:hover {
     border: 1px solid red;
     cursor: pointer;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
 }
 /*==================================================================*/
+
+/*======================= [ALL Product] =====================*/
+.all-product .demo-product .one-product {
+    display: flex;
+}
+.all-product .demo-product .one-product p {
+    margin: 0;
+}
+.all-product .card .card-title {
+    font-size: 16px;
+}
+.all-product .card .card-text {
+    font-size: 13px;
+}
+.all-product .card button {
+    font-size: 12px;
+    height: 30px;
+}
+.all-product .card:hover {
+    border: 1px solid red;
+    cursor: pointer;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
 
 /*============================ [Footer] ============================*/
 footer {

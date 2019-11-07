@@ -263,7 +263,7 @@ function renderProfileDetail(account) {
     let p_email = document.getElementById('p_email');
     let p_address = document.getElementById('p_address');
     let p_nameTitle = document.getElementById('p_nameTitle');
-    
+
     p_nameTitle.innerText = account.username;
     p_name.value = account.username;
     p_number.value = account.phoneNumber;
@@ -326,6 +326,7 @@ function showProfileOrder() {
 // ========================================= PRODUCT CLIENT ===========================================
 let owl_slide = document.getElementById('owl-slide');
 let extra_product = document.getElementById('extra-product');
+let all_product = document.getElementById('all-product');
 
 window.onload = loadProduct(PRODUCTS);
 
@@ -336,6 +337,7 @@ function loadProduct(PRODUCTS) {
         } else {
             renderProduct(product);
         }
+        renderAllProduct(product);
     });
 
     let owl = $('.owl-carousel');
@@ -359,7 +361,6 @@ function renderProduct(product) {
                 <button class="btn btn-primary btn-sm" id="addCart" data-code="${product.code}">Thêm Giỏ Hàng</button>
             </div>
         </div>`;
-
     owl_slide.innerHTML += contents;
 }
 
@@ -373,8 +374,43 @@ function renderExtraProduct(product) {
             <button class="btn btn-primary btn-sm" id="addCart" data-code="${product.code}">Thêm Giỏ Hàng</button>
         </div>
     </div>`;
-
     extra_product.innerHTML += contents;
+}
+
+function renderAllProduct(product) {
+    let contents = `
+        <div class="card col-3 text-center mb-2" data-aos="zoom-in-right">
+            <img src="images/${product.image}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${product.productName}</h5>
+                <p class="card-text">${formatter.format(product.price)}</p>
+                <button class="btn btn-primary btn-sm" id="addCart" data-code="${product.code}">Thêm Giỏ Hàng</button>
+            </div>
+        </div>
+        `;
+    all_product.innerHTML += contents;
+}
+
+// **********************  FILTER PRODUCT **********************
+let filter_option = document.getElementById('filter-option');
+filter_option.addEventListener('change', filterProduct);
+
+function filterProduct() {
+    let option = filter_option.value;
+    if (option === 'priceUp') {
+       PRODUCTS.sort(function(p1, p2) {
+           return p1.price - p2.price;
+       })
+       all_product.innerHTML = '';
+       PRODUCTS.forEach(product => renderAllProduct(product));
+    }
+    if (option === 'priceDown') {
+        PRODUCTS.sort(function(p1, p2) {
+            return p2.price - p1.price;
+        })
+        all_product.innerHTML = '';
+        PRODUCTS.forEach(product => renderAllProduct(product));
+    }
 }
 
 // ========================================= CART CLIENT ===========================================
@@ -527,7 +563,6 @@ function actCartProduct(event) {
         } else {
             ev.nextElementSibling.value = nValue;
         }
-        
         updateCartProduct(data_code, nValue);
     }
 

@@ -66,9 +66,9 @@
             <div class="header-top">
                 <div class="bar-inner container">
                     <div id="userProfile" data-toggle="modal" data-target="#profileModal"><i
-                            class="fas fa-user-tie fa-2x"></i></div>
+                            class="fas fa-user-tie fa-lg"> | <small>Tài khoản</small></i></div>
                     <div id="adminProfile" data-toggle="modal" data-target="#profileModal"><i
-                            class="fas fa-user-shield fa-2x"></i></div>
+                            class="fas fa-user-shield fa-lg"> | <small>Tài khoản</small></i></div>
 
                     <div class="acount-item" data-toggle="modal" data-target="#form_account" id="userAct">
                         <p>Đăng Nhập/</p>
@@ -325,10 +325,10 @@
                                 <a href="">Giới Thiệu</a>
                             </li>
                             <li>
-                                <a href="">Sản Phẩm</a>
+                                <a href="#allProducts">Sản Phẩm</a>
                             </li>
                             <li>
-                                <a href="">Phụ Kiện Khác</a>
+                                <a href="#extraProducts">Phụ Kiện Khác</a>
                             </li>
                             <li>
                                 <a href="">Tin Tức</a>
@@ -452,7 +452,7 @@
         </section>
 
         <!-- Another Accessories -->
-        <div>
+        <div id="extraProducts">
             <div class="container">
                 <div class="acc-title mb-3">
                     <h4 class="text-center">______________________________________ Phụ Kiện
@@ -466,6 +466,97 @@
                 </div>
             </div>
         </div>
+
+        <!-- All Product -->
+        <div class="all-product" id="allProducts">
+            <div class="container">
+                <div class="text-center">
+                    <h3>Sản Phẩm</h3>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="price-filter">
+                            <p>LỌC THEO GIÁ</p>
+                            <input type="range" class="custom-range" min="0" max="5" step="0.5" id="filterPrice">
+                        </div>
+                        <div class="demo-product">
+                            <p>SẢN PHẨM</p>
+                            <div class="ref-product p-2 bg-light">
+                                <div class="one-product">
+                                    <img width="80" height="50"
+                                        src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/women-chuck-07-600x384.jpg"
+                                        alt="">
+                                    <div class="ml-2">
+                                        <p>Chuck 70 Psy</p>
+                                        <p>1,800,000 ₫</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="one-product">
+                                    <img width="80" height="50"
+                                        src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/women-chuck-07-600x384.jpg"
+                                        alt="">
+                                    <div class="ml-2">
+                                        <p>Chuck 70 Psy-Kick</p>
+                                        <p>1,800,000 ₫</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="one-product">
+                                    <img width="80" height="50"
+                                        src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/women-chuck-07-600x384.jpg"
+                                        alt="">
+                                    <div class="ml-2">
+                                        <p>Chuck 70 Psy-Kick</p>
+                                        <p>1,800,000 ₫</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="one-product">
+                                    <img width="80" height="50"
+                                        src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/women-chuck-07-600x384.jpg"
+                                        alt="">
+                                    <div class="ml-2">
+                                        <p>Chuck 70 Psy-Kick</p>
+                                        <p>1,800,000 ₫</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="one-product">
+                                    <img width="80" height="50"
+                                        src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/women-chuck-07-600x384.jpg"
+                                        alt="">
+                                    <div class="ml-2">
+                                        <p>Chuck 70 Psy-Kic</p>
+                                        <p>1,800,000 ₫</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="filter-product">
+                            <div class="row offset-9">
+                                <p class="m-0 mb-1">HIỂN THỊ SẢN PHẨM THEO:</p>
+                                <div class="form-group">
+                                    <select id="filter-option">
+                                        <option value="priceUp">Giá Thấp đến Cao</option>
+                                        <option value="priceDown">Giá Cao xuống Thấp</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" id="all-product">
+                                
+                                <!-- Insert Data -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- ========================================= Cart Content ============================================== -->
