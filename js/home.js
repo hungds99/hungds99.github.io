@@ -398,14 +398,14 @@ filter_option.addEventListener('change', filterProduct);
 function filterProduct() {
     let option = filter_option.value;
     if (option === 'priceUp') {
-       PRODUCTS.sort(function(p1, p2) {
-           return p1.price - p2.price;
-       })
-       all_product.innerHTML = '';
-       PRODUCTS.forEach(product => renderAllProduct(product));
+        PRODUCTS.sort(function (p1, p2) {
+            return p1.price - p2.price;
+        })
+        all_product.innerHTML = '';
+        PRODUCTS.forEach(product => renderAllProduct(product));
     }
     if (option === 'priceDown') {
-        PRODUCTS.sort(function(p1, p2) {
+        PRODUCTS.sort(function (p1, p2) {
             return p2.price - p1.price;
         })
         all_product.innerHTML = '';
