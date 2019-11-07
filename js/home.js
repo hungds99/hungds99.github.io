@@ -235,15 +235,15 @@ function checkSession() {
 }
 
 // ========================================= PROFILE ACCOUNT CLIENT ===========================================
-//  Profile Action
-let profileToggle = document.getElementById('profileToggle');
-let close = document.getElementById('close');
-let logout = document.getElementById('logout');
-
 userProfile.addEventListener('click', actProfileToggle);
 adminProfile.addEventListener('click', actProfileToggle);
-close.addEventListener('click', actCloseProfileToggle);
-logout.addEventListener('click', actLogout);
+
+let logout = document.getElementById('logout');
+
+logout.addEventListener('click', function () {
+    sessionStorage.clear();
+    location.reload();
+})
 
 function actProfileToggle() {
     SESSION = JSON.parse(sessionStorage.getItem('SESSION'));
@@ -251,65 +251,75 @@ function actProfileToggle() {
     ACCOUNTS.forEach(function (account) {
         if (account.ID === SESSION.userID) {
             renderProfileDetail(account);
+            renderProfileOrder(account.ID);
         }
     })
-    profileToggle.style.display = 'block';
+
 }
 
-function actCloseProfileToggle() {
-    profileToggle.style.display = 'none';
-}
-
-let profile_content = document.getElementById('profile-content');
 function renderProfileDetail(account) {
-    let contents = `
-        <div class="row">
-            <div class="col-3">
-                <p>Họ Tên: </p>
-            </div>
-            <div class="col-5">
-                <p>${account.username}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <p>SDT: </p>
-            </div>
-            <div class="col-5">
-                <p>${account.phoneNumber}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <p>Email: </p>
-            </div>
-            <div class="col-5">
-                <p>${account.email}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <p>Địa Chỉ: </p>
-            </div>
-            <div class="col-5">
-                <p>${account.address}</p>
-            </div>
-        </div>`;
+    let p_name = document.getElementById('p_name');
+    let p_number = document.getElementById('p_number');
+    let p_email = document.getElementById('p_email');
+    let p_address = document.getElementById('p_address');
+    let p_nameTitle = document.getElementById('p_nameTitle');
+    
+    p_nameTitle.innerText = account.username;
+    p_name.value = account.username;
+    p_number.value = account.phoneNumber;
+    p_email.value = account.email;
+    p_address.value = account.address;
 
-    let admin_manager = document.getElementById('admin-manager');
-    if (account.role === 'Admin') {
-        admin_manager.style.display = 'inline-block';
+    let manager = document.getElementById('manager');
+    if (account.role === "Admin") {
+        manager.style.display = 'block';
     } else {
-        admin_manager.style.display = 'none';
+        manager.style.display = 'none';
     }
-
-    profile_content.innerHTML = contents;
 }
 
-// Logout
-function actLogout() {
-    sessionStorage.clear();
-    location.reload();
+function renderProfileOrder(ID) {
+    let profileTbody = document.getElementById('profileTbody');
+    let content = '';
+    ORDERS.forEach(order => {
+        if (order.userID === ID) {
+            let productList = ``;
+            let total_price = 0;
+            order.products.forEach(p => {
+                productList += `
+                    ${p.productName} (x${p.quantity})<br>
+                `
+                total_price += p.quantity * p.price
+            });
+
+            content += `
+            <tr>
+                <th scope="row" class="text-info">${order.orderId}</th>
+                <td>${order.createDate}</td>
+                <td>${productList}</td>
+                <td>${formatter.format(total_price)}</td>
+                <td class="text-center">${order.status}</td>
+            </tr>
+            `;
+        }
+    })
+    profileTbody.innerHTML = content;
+}
+
+let s_profileInfo = document.getElementById('s_profileInfo');
+let s_profileOrder = document.getElementById('s_profileOrder');
+
+s_profileInfo.addEventListener('click', showProfileInfo);
+s_profileOrder.addEventListener('click', showProfileOrder);
+
+function showProfileInfo() {
+    document.getElementById('account-info').style.display = 'block';
+    document.getElementById('order-info').style.display = 'none';
+}
+
+function showProfileOrder() {
+    document.getElementById('account-info').style.display = 'none';
+    document.getElementById('order-info').style.display = 'block';
 }
 
 // ========================================= PRODUCT CLIENT ===========================================

@@ -233,8 +233,8 @@ function actProduct(event) {
                 <h6>${productDetail[0].productName}</h6>
                 <p>Code: ${productDetail[0].code} </p>
                 <img width="220" height="180" src="images/${productDetail[0].image}" alt="">
-                <div class="mt-2">Giá Tiền: ${productDetail[0].price} VND</div>
-                <div>Ngày Nhập: ${productDetail[0].entry}</div>
+                <div class="mt-2">Giá Tiền: ${formatter.format(productDetail[0].price)}</div>
+                <div>Ngày Nhập Kho: ${productDetail[0].entry}</div>
         `;
         product_detail.innerHTML = modals;
     }
@@ -357,13 +357,27 @@ let order_tbody = document.getElementById('order_tbody');
 function renderOrder() {
     let contents = '';
     ORDERS.forEach(order => {
+        let options = '';
+        if (order.status === "Đặt Hàng") {
+            options = `
+                <option value="Đặt hàng" selected>Đặt hàng</option>
+                <option value="Giao hàng thành công" >Giao hàng thành công</option>`
+        } else {
+            options = `
+                <option value="Đặt Hàng">Đặt Hàng</option>
+                <option value="Giao Hàng Thành Công" selected>Giao Hàng Thành Công</option>`
+        }
         contents += `
             <tr>
                 <th scope="row">${order.orderId}</th>
                 <th scope="row">${order.userID}</th>
                 <td>${order.createDate}</td>
                 <td>${order.payMethod}</td>
-                <td>${order.status}</td>
+                <td> 
+                    <select class="form-control" id="orderStatus" data-id="${order.orderId}">
+                        ${options}
+                    </select>
+                </td>
                 <td>
                     <i class="fas fa-calendar-week text-info" data-code="${order.orderId}" id="order-detail" data-toggle="modal" data-target="#orderModal"></i>
                 </td>
@@ -372,6 +386,7 @@ function renderOrder() {
     order_tbody.innerHTML = contents;
 
     actOrderDetail();
+    actUpdateOrderStatus();
 }
 
 function actOrderDetail() {
@@ -386,13 +401,13 @@ function actOrderDetail() {
         let data_code = this.getAttribute('data-code');
         ORDERS.forEach(o => {
             if (o.orderId == data_code) {
-                renderCustomerInfor(o);
+                renderCustomerOrderInfor(o);
             }
         })
     }
 }
 
-function renderCustomerInfor(order) {
+function renderCustomerOrderInfor(order) {
     let customer_info = document.getElementById('customer-info');
     let customer = order.customerInfo;
 
@@ -424,10 +439,10 @@ function renderCustomerInfor(order) {
             <p>${order.payMethod}</p>
         </div>
     `;
-    renderCustomerInfo(order);
+    renderCustomerProductInfo(order);
 }
 
-function renderCustomerInfo(order) {
+function renderCustomerProductInfo(order) {
     let customer_product = document.getElementById('customer-product');
     let total_order = document.getElementById('total-order');
     let contents = ``;
@@ -458,4 +473,20 @@ function renderCustomerInfo(order) {
 
     customer_product.innerHTML = contents;
     total_order.innerText = `${formatter.format(total)}`;
+}
+
+function actUpdateOrderStatus() {
+    let orderStatuss = document.querySelectorAll('#orderStatus');
+
+    orderStatuss.forEach(orderStatus => {
+        orderStatus.addEventListener('change', function () {
+            ORDERS.forEach(order => {
+                if (order.orderId === orderStatus.getAttribute('data-id')) {
+                    order.status = orderStatus.value;
+                    localStorage.setItem('DATABASE', JSON.stringify(DATABASE));
+                }
+            })
+        });
+    })
+
 }

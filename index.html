@@ -21,6 +21,8 @@
     <style>
         body {
             font-size: 0.9em;
+            margin: 0;
+            padding: 0;
         }
 
         .owl-carousel .owl-item img {
@@ -30,17 +32,43 @@
         i {
             cursor: pointer;
         }
+
+        ul {
+            list-style-type: none;
+        }
+
+        /* Profile */
+        .menu-drop ul li {
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        .menu-drop ul li i {
+            padding-right: 15px;
+        }
+
+        .menu-drop ul li:hover {
+            cursor: pointer;
+            background-color: tan;
+        }
+
+        .liactive {
+            background-color: tan;
+        }
     </style>
 </head>
 
 <body>
+    <!-- ========================================= Header Content ============================================== -->
     <!-- Header -->
     <header>
         <div class="header-wrapper">
             <div class="header-top">
                 <div class="bar-inner container">
-                    <div id="userProfile"><i class="fas fa-user-tie fa-2x"></i></div>
-                    <div id="adminProfile"><i class="fas fa-user-shield fa-2x"></i></div>
+                    <div id="userProfile" data-toggle="modal" data-target="#profileModal"><i
+                            class="fas fa-user-tie fa-2x"></i></div>
+                    <div id="adminProfile" data-toggle="modal" data-target="#profileModal"><i
+                            class="fas fa-user-shield fa-2x"></i></div>
 
                     <div class="acount-item" data-toggle="modal" data-target="#form_account" id="userAct">
                         <p>Đăng Nhập/</p>
@@ -120,6 +148,140 @@
                     </div>
                     <!-- End -->
 
+                    <!-- Profile Modal -->
+                    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog"
+                        aria-labelledby="profileModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <!-- ========================================= Profile Content ============================================== -->
+                                    <div class="user-profile mt-4 mb-4">
+                                        <div class="container">
+                                            <div class="row text-dark">
+                                                <!-- Menu Left -->
+                                                <div class="col-3 menu-left">
+                                                    <div class="row profiles">
+                                                        <div class="col-4 text-center text-success bg-light">
+                                                            <i class="fas fa-user-circle fa-4x mt-1"></i>
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>Tài khoản của</p>
+                                                            <h6 id="p_nameTitle"></h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="menu-drop p-3">
+                                                        <ul>
+                                                            <li class="liactive" id="s_profileInfo">
+                                                                <i class="fas fa-user"></i>
+                                                                Thông tin tài khoản
+                                                            </li>
+                                                            <li id="s_profileOrder">
+                                                                <i class="fas fa-tasks"></i>
+                                                                Quản lý đơn hàng
+                                                            </li>
+                                                            <li>
+                                                                <i class="fas fa-bell"></i>
+                                                                Thông báo của tôi
+                                                            </li>
+                                                            <li>
+                                                                <i class="fas fa-grin-hearts"></i>
+                                                                Sản phẩm yêu thích
+                                                            </li>
+                                                            <li>
+                                                                <i class="fas fa-comments"></i>
+                                                                Nhận xét của tôi
+                                                            </li>
+                                                        </ul>
+                                                        <button type="button" class="btn btn-info btn-sm"
+                                                            id="manager"><a class="text-light" href="admin.html">Đến
+                                                                Quản Lý</a></button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Menu Right -->
+                                                <div class="col-9 content-right">
+
+                                                    <!-- ACCOUNT INFO -->
+                                                    <div id="account-info">
+                                                        <h5>Thông tin tài khoản</h5>
+                                                        <div class="account-profile p-3 bg-light">
+                                                            <div class="form-group row">
+                                                                <label for="p_name" class="col-sm-2 col-form-label">Họ
+                                                                    tên</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="text" class="form-control" id="p_name">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="p_number" class="col-sm-2 col-form-label">Số
+                                                                    điện thoại</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="text" class="form-control"
+                                                                        id="p_number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="p_email"
+                                                                    class="col-sm-2 col-form-label">Email</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="email" class="form-control"
+                                                                        id="p_email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="p_address"
+                                                                    class="col-sm-2 col-form-label">Địa
+                                                                    chỉ</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="text" class="form-control"
+                                                                        id="p_address">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-5 text-center">
+                                                                <button type="button" class="btn btn-warning btn-sm"
+                                                                    id="updateProfile">Cập
+                                                                    nhật</button>
+                                                                <button type="button" class="btn btn-danger btn-sm"
+                                                                    id="logout">Đăng Xuất</button>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <!-- ORDER INFO -->
+                                                    <div id="order-info" style="display: none;">
+                                                        <h5>Đơn hàng của tôi</h5>
+                                                        <div class="account-order">
+                                                            <table class="table">
+                                                                <thead class="thead-light">
+                                                                    <tr>
+                                                                        <th scope="col">Mã đơn hàng</th>
+                                                                        <th scope="col">Ngày mua</th>
+                                                                        <th scope="col">Sản phẩm</th>
+                                                                        <th scope="col">Tổng tiền</th>
+                                                                        <th scope="col">Trạng thái đơn hàng</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="profileTbody">
+                                                                    <!-- Insert Data -->
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+
                     <div class="logo">
                         <img src="http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/logo-mona.png" alt="">
                     </div>
@@ -142,7 +304,8 @@
                                     <div>
                                         <h5 class="text-dark" id="total"></h5>
                                     </div>
-                                    <button type="button" class="btn btn-outline-warning float-right btn-sm" id="checkout">Đi
+                                    <button type="button" class="btn btn-outline-warning float-right btn-sm"
+                                        id="checkout">Đi
                                         Đến Giỏ Hàng</button>
                                 </div>
                             </div>
@@ -150,32 +313,7 @@
                     </div>
                 </div>
             </div>
-            <div class="profileToggle" id="profileToggle">
-                <div class="profileAction row">
-                    <div class="profile-image col-4 bg-light pt-2">
-                        <div class="text-center">
-                            <img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png"
-                                alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
-                            <h4 class="m-0">Jason Doe</h4>
-                            <p class="font-weight-light text-muted mb-0">Web developer</p>
-                        </div>
-                    </div>
-                    <div class="col-8 bg-light pt-2">
-                        <div class="profile-content" id="profile-content">
-                            <!-- Insert Data -->
-                        </div>
-                        <div class="profile-action pb-2">
-                            <button type="button" class="btn btn-warning btn-sm" id="admin-manager">
-                                <a href="admin.html">ADMIN</a>
-                            </button>
-                            <button type="button" class="btn btn-success btn-sm">Lưu</button>
-                            <button type="button" class="btn btn-primary btn-sm" id="logout">Đăng Xuất</button>
-                            <button type="button" class="btn btn-danger btn-sm" id="close">Đóng</button>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
             <div class="header-bottom">
                 <div class="menu-inner container">
                     <div class="menu-bar">
