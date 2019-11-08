@@ -346,7 +346,7 @@ function loadProduct(PRODUCTS) {
         loop: true,
         margin: 10,
         autoplay: true,
-        autoplayTimeout: 1000,
+        autoplayTimeout: 1500,
         autoplayHoverPause: true
     });
 }
@@ -411,6 +411,26 @@ function filterProduct() {
         all_product.innerHTML = '';
         PRODUCTS.forEach(product => renderAllProduct(product));
     }
+}
+
+// ****************** Search ********************************
+let search = document.getElementById("search");
+search.addEventListener('input', actSearch);
+
+function actSearch() {
+    let searchInput = search.value;
+    let productCompare = PRODUCTS.filter(product => searchCompare(searchInput, product.productName));
+    all_product.innerHTML = '';
+    productCompare.forEach(product => {
+        renderAllProduct(product);
+    });
+}
+
+// Search Compare
+function searchCompare(searchInput, productName) {
+    let searchInputLower = searchInput.toLowerCase();
+    let productNameLower = productName.toLowerCase();
+    return productNameLower.includes(searchInputLower);
 }
 
 // ========================================= CART CLIENT ===========================================

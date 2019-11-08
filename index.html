@@ -394,7 +394,7 @@
             <div class="container">
                 <div class="banner-content">
                     <div class="row text-center">
-                        <div class="col-4 banner-card">
+                        <div class="col-4 banner-card p-2">
                             <div class="banner-title">
                                 <img src="images/title_block_03.png"
                                     alt="">
@@ -403,8 +403,11 @@
                                 <img src="images/product_block_05.jpg"
                                     alt="">
                             </div>
+                            <div class="btn-overlay">
+                                <button class="btn btn-danger btn-sm">Xem Thêm</button>
+                            </div>
                         </div>
-                        <div class="col-4 banner-card">
+                        <div class="col-4 banner-card p-2">
                             <div class="banner-title">
                                 <img src="images/title_block_05.png"
                                     alt="">
@@ -413,8 +416,11 @@
                                 <img src="images/product_block_03.jpg"
                                     alt="">
                             </div>
+                            <div class="btn-overlay">
+                                <button class="btn btn-danger btn-sm">Xem Thêm</button>
+                            </div>
                         </div>
-                        <div class="col-4 banner-card">
+                        <div class="col-4 banner-card p-2">
                             <div class="banner-title">
                                 <img src="images/title_block_07.png"
                                     alt="">
@@ -422,6 +428,9 @@
                             <div class="banner-product">
                                 <img src="images/product_block_07.jpg"
                                     alt="">
+                            </div>
+                            <div class="btn-overlay">
+                                <button class="btn btn-danger btn-sm">Xem Thêm</button>
                             </div>
                         </div>
                     </div>
@@ -538,14 +547,24 @@
                     </div>
                     <div class="col-9">
                         <div class="filter-product">
-                            <div class="row offset-9">
-                                <p class="m-0 mb-1">HIỂN THỊ SẢN PHẨM THEO:</p>
-                                <div class="form-group">
-                                    <select id="filter-option">
-                                        <option value="priceUp">Giá Thấp đến Cao</option>
-                                        <option value="priceDown">Giá Cao xuống Thấp</option>
-                                    </select>
+                            <div class="row mb-3">
+                                <!-- Search form -->
+                                <div class="col-9">
+                                    <p class="m-0">TÌM KIẾM SẢN PHẨM :</p>
+                                    <input type="text" name="search" id="search" class="search pl-1"
+                                        placeholder="Nhập Tên Sản Phẩm ...">
+                                    <i class="fab fa-searchengin fa-lg"></i>
                                 </div>
+                                <div class="col-3">
+                                    <p class="m-0">HIỂN THỊ SẢN PHẨM THEO:</p>
+                                    <div class="form-group pl-2">
+                                        <select id="filter-option">
+                                            <option value="priceUp">Giá Thấp đến Cao</option>
+                                            <option value="priceDown">Giá Cao xuống Thấp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                             </div>
                             <div class="row" id="all-product">
 
