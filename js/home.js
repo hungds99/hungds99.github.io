@@ -70,7 +70,7 @@ function renderCartItems() {
     let total = 0;
 
     if (products === undefined || products.length === 0) {
-        total_inner.innerHTML = `<p>Không có sản phẩm trong giỏ.</p>`;
+        total_inner.innerHTML = `<p class="text-center">Không có sản phẩm trong giỏ.</p>`;
         checkout.style.display = 'none';
     } else {
         checkout.style.display = 'block';
@@ -254,7 +254,6 @@ function actProfileToggle() {
             renderProfileOrder(account.ID);
         }
     })
-
 }
 
 function renderProfileDetail(account) {
@@ -275,6 +274,19 @@ function renderProfileDetail(account) {
         manager.style.display = 'block';
     } else {
         manager.style.display = 'none';
+    }
+
+    // *** Update User Pr0fi|e ***
+    let updateProfile = document.getElementById('updateProfile');
+    updateProfile.addEventListener('click', updateUserProfile);
+
+    function updateUserProfile() {
+        account.username = p_name.value;
+        account.phoneNumber = p_number.value;
+        account.email = p_email.value;
+        account.address = p_address.value;
+        localStorage.setItem('DATABASE', JSON.stringify(DATABASE));
+        alert('Update Thành Công !');
     }
 }
 
