@@ -215,6 +215,27 @@ header {
 }
 /*==================================================================*/
 
+/*======================= [PR0M0TI0N Product] =====================*/
+.promotion .promotion-banner {
+    position: relative;
+}
+.promotion .promotion-banner .promotion-content-banner {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+}
+.promotion .promotion-banner .promotion-content-banner .content-banner {
+    text-align: center;
+}
+.promotion .promotion-banner .promotion-img-banner {
+    width: 100%;
+    height: 500px;
+    background-image: url("http://mauweb.monamedia.net/converse/wp-content/uploads/2019/05/banner-1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+}
+
 /*======================= [ALL Product] =====================*/
 .all-product .demo-product .one-product {
     display: flex;
