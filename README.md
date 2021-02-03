@@ -1,11 +1,12 @@
 # N0 H0PE TEAM
-* Đề Tài: WEBSITE Bán Giày và Phụ Kiện
+## Đề Tài: WEBSITE Bán Giày và Phụ Kiện
 
-Thành Viên Nhóm : 
-    - Đinh Sỹ Hùng (Leader)
-    - Nguyễn Hoàng Vũ (Tấu Hài)
-    - Lê Huy Qúy (Phù Hộ)
-    - Nguyễn Quốc Cường (Đủ đội hình)
+### Tổng quan
+    Thành Viên Nhóm : 
+        - Đinh Sỹ Hùng (Leader)
+        - Nguyễn Hoàng Vũ (Tấu Hài)
+        - Lê Huy Qúy (Phù Hộ)
+        - Nguyễn Quốc Cường (Đủ đội hình)
 
 Demo: https://hunter-op.github.io/
 
