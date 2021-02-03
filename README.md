@@ -11,7 +11,7 @@
  * Quản Lý Thành Viên: https://docs.google.com/spreadsheets/d/157FVQ8NYMWSQwfQFAO-As018dj3vpYtOfdXEmcdIbnA/edit#gid=0
 
 ## Demo
-   - Truy cập: hungds99.github.io
+   - Truy cập: https://hungds99.github.io/
    - Tài khoản admin: admin@gmail.com/123
 ## Chức năng
    * Người dùng:
