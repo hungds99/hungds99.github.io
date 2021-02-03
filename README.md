@@ -12,6 +12,4 @@
 
 ## Demo
    - Truy cập: hungds99.github.io
-   * Note: Đăng Nhập trước khi thực hiện các thao tác trên website :)
-   - Tài khoản admin: admin@gmail.com/123  
-
+   - Tài khoản admin: admin@gmail.com/123
