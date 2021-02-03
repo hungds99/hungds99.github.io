@@ -4,10 +4,10 @@
 
 ## Tổng quan
   * Thành Viên Nhóm : 
-        - Đinh Sỹ Hùng 
-        - Nguyễn Hoàng Vũ 
-        - Lê Huy Qúy 
-        - Nguyễn Quốc Cường 
+   - Đinh Sỹ Hùng 
+   - Nguyễn Hoàng Vũ 
+   - Lê Huy Qúy 
+   - Nguyễn Quốc Cường 
  * Quản Lý Thành Viên: https://docs.google.com/spreadsheets/d/157FVQ8NYMWSQwfQFAO-As018dj3vpYtOfdXEmcdIbnA/edit#gid=0
 
 ## Demo
